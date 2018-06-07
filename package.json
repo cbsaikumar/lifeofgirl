@@ -1,0 +1,22 @@
+{
+  "name": "intern_management_backend",
+  "version": "1.0.0",
+  "description": "Inter Management System Backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "jsonwebtoken": "*",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Bhargava Sai Kumar",
+  "license": "ISC"
+}

@@ -1,0 +1,59 @@
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm);">
+    <div class="container">
+      <div class="row form-group">
+        <div class="col-lg-3">
+          <label for="username">Username</label>
+        </div>
+        <div class="col-lg-3">
+            <input type="email" 
+            class="form-control" 
+            name="username"
+            id="username"
+            ngModel
+            [pattern]="emailPattern"
+            #nameField="ngModel"
+            required>
+        </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-lg-3">
+            <label for="password">Password</label>
+          </div>
+          <div class="col-lg-3">
+            <input type="password" 
+            class="form-control" 
+            name="password"
+            id="password"
+            ngModel
+            #nameField="ngModel"
+            required
+            minlength="3">
+        </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-lg-3">
+            <label for="usertype">Login as</label>
+          </div>
+          <div class="col-lg-3">
+            <select
+            class="form-control" 
+            name="usertype"
+            id="usertype"
+            ngModel
+            #nameField="ngModel"
+            required>
+              <option *ngFor="let usertype of usertypes" [ngValue]="usertype">{{usertype}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-lg-3">
+            <label for=""></label>
+          </div>
+          <div class="col-lg-3">
+              <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+          </div>
+        </div>
+    </div>    
+
+  </form>

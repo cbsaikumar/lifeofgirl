@@ -1,0 +1,8 @@
+label{
+    float:left;
+}
+input[type="radio"]{
+    width: auto;
+    display: inline;
+    margin:2%;
+}

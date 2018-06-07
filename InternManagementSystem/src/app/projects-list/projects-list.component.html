@@ -1,0 +1,5 @@
+<div>
+  <ul *ngFor="let project of listOfProjects">
+    <li [routerLink] = "['/projectDetails/', project]">{{project}}</li>
+  </ul>
+</div>

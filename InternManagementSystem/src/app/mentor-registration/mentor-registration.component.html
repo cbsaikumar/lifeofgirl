@@ -1,0 +1,151 @@
+
+<h1>Mentor Registration</h1>
+<form #registrationForm="ngForm" (ngSubmit)="register(registrationForm);">
+    <div class="container">
+      <div class="row form-group">
+            <div class="col-lg-4">
+                <label for="userType">User Type</label>
+            </div> 
+            <div class="col-lg-4">
+                <input type="text" 
+                class="form-control" 
+                name="userType"
+                id="userType"
+                [(ngModel)]="userType"
+                disabled>
+            </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+          <label for="name">Name</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="text" 
+            class="form-control" 
+            name="name"
+            id="name"
+            [(ngModel)]="name"
+            required
+            minlength="3">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="email" 
+            [pattern]="emailPattern"
+            class="form-control" 
+            name="email"
+            id="email"
+            [(ngModel)]="email"
+            required
+            minlength="3">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+            <label for="dob">Date of Birth</label>
+        </div>
+        <div class="col-lg-4">
+              <input type="date" 
+              class="form-control" 
+              name="dob"
+              id="dob"
+              [(ngModel)]="dob"
+              required>
+        </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-lg-4">
+              <label for="mobile">Mobile</label>
+          </div>
+          <div class="col-lg-4">
+                <input type="tel" 
+                
+                class="form-control" 
+                name="mobile"
+                id="mobile"
+                [(ngModel)]="mobile"
+                required>
+          </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-4">
+                <label for="Affiliation">Affiliation</label>
+            </div>
+            <div class="col-lg-4">
+                  <input type="text" 
+                  class="form-control" 
+                  name="affiliation"
+                  id="affiliation"
+                  [(ngModel)]="affiliation"
+                  required>
+            </div>
+          </div>
+          <div class="row form-group">
+              <div class="col-lg-4">
+                  <label for="positionOfResponsibility">Position of Responsibility</label>
+              </div>
+              <div class="col-lg-4">
+                    <input type="text" 
+                    class="form-control" 
+                    name="positionOfResponsibility"
+                    id="positionOfResponsibility"
+                    [(ngModel)]="positionOfResponsibility"
+                    required>
+              </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-4">
+                    <label for="associationWithLog">Are you associated with Life-of-Girl project?</label>
+                </div>
+                <div class="col-lg-4">
+                      <input type="radio" 
+                      class="form-control" 
+                      name="associationWithLog"
+                      id="associationWithLog"
+                      value="yes"
+                      [(ngModel)]="associationWithLog">Yes
+                      <input type="radio" 
+                      class="form-control" 
+                      name="associationWithLog"
+                      id="associationWithLog"
+                      value="no"
+                      [(ngModel)]="associationWithLog">No
+                </div>
+              </div>
+              <div class="row form-group" *ngIf="associationWithLog === 'yes'">
+                <div class="col-lg-4">
+                    <label for="logObjectiveDesc">Please Enter your LOG ID</label>
+                </div>
+                <div class="col-lg-4">
+                      <input type="text"
+                      class="form-control" 
+                      name="logId"
+                      id="logId"
+                      required
+                      [(ngModel)]="logId">
+                </div>
+              </div>   
+              <div class="row form-group" *ngIf="associationWithLog === 'no'">
+                  <div class="col-lg-4">
+                      <label for="logObjectiveDesc">How do you like to extend your support to our Life-of-Girl (LoG) objectives? (in 100 words)</label>
+                  </div>
+                  <div class="col-lg-4">
+                        <textarea 
+                        rows="4" cols="50"
+                        class="form-control" 
+                        name="logObjectiveDesc"
+                        id="logObjectiveDesc"
+                        required
+                        maxlength="500"
+                        [(ngModel)]="logObjectiveDesc"></textarea>
+                  </div>
+                </div>      
+            </div>    
+
+    <button class="btn btn-primary" [disabled]="!registrationForm.valid">Register</button>
+
+  </form>

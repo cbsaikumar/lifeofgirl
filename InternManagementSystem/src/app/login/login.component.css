@@ -1,0 +1,9 @@
+.form-control{
+    float : right;
+}
+label{
+    float:left;
+}
+table{
+    margin : 0 auto;
+}

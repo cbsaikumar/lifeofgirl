@@ -1,0 +1,55 @@
+<div>
+  Showing project details: {{project}}
+
+  <table class="table table-striped custom-table">
+    <tbody class="container">
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Project Title</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.projectTile}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Project Code</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.projectCode}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Project Type</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.projectType}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Mentor</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.mentor}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6 ">Credits</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.credits}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Prerequisites</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.prerequisites}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Work Duration</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.workDuration}}</td>
+      </tr>
+      <tr class="row">
+          <td class="col-lg-3 col-md-3 col-sm-6">Onsite/WFH</td>
+          <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.onsite}}</td>
+        </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Start Date</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.startDate}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Eligibility</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.eligibility}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Description</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{projectData.description}}</td>
+      </tr>
+      <tr>
+        <button class="btn btn-primary btn-block" (click)="apply(projectData)">Apply</button>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,58 @@
+<p>Project Registration</p>
+<form #myForm="ngForm" (ngSubmit)="submit(myForm.value)">
+  <table class="table table-striped custom-table">
+    <tbody class="container">
+        <tr class="row">
+            <td class="col-lg-3 col-md-3 col-sm-6">Name</td>
+            <td class="col-lg-9 col-md-9 col-sm-6">-- Name Placeholder --</td>
+          </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Project Title</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{receivedData.projectTile}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Project Code</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{receivedData.projectCode}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6 ">Credits</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{receivedData.credits}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Prerequisites</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{receivedData.prerequisites}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Work Duration</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{receivedData.workDuration}}</td>
+      </tr>
+      <tr class="row">
+          <td class="col-lg-3 col-md-3 col-sm-6">Onsite/WFH?</td>
+          <td class="col-lg-9 col-md-9 col-sm-6">{{receivedData.onsite}}</td>
+        </tr>
+      <tr class="row">
+        <td class="col-lg-3 col-md-3 col-sm-6">Eligibility</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">{{receivedData.eligibility}}</td>
+      </tr>
+      <tr class="row form-group">
+        <td class="col-lg-3 col-md-3 col-sm-6">Skillset</td>
+        <td class="col-lg-9 col-md-9 col-sm-6">
+          <input type="text" name="skillSet" id="skillSet" class="form-control" [(ngModel)]="skillSet" required>
+        </td>
+      </tr>
+      <tr class="row form-group">
+          <td class="col-lg-3 col-md-3 col-sm-6">Given this project, what will you do to address the project objectives? </td>
+          <td class="col-lg-9 col-md-9 col-sm-6">
+            <textarea name="projectObjective" rows="4" cols="50" id="projectObjective" class="form-control" minlength=100 [(ngModel)]="projectObjective" required></textarea>
+          </td>
+        </tr>
+        <tr class="row">
+            <td colspan="2"><p><input type="radio" name="tnc" required>I acknowledge that I have read and agree to the above Terms and Conditions</p></td>
+        </tr>
+        <tr>
+          <button class="btn btn-primary btn-block" [disabled]="!myForm.valid">Submit</button>
+        </tr>
+    </tbody>
+  </table>
+  
+</form>
