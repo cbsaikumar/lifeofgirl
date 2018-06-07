@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
 
+  isDev: any;
   private registerUrl: string = 'users/register';
   private authenticateUrl: string = 'users/authenticate';
   private profileUrl: string = 'users/profile';
@@ -12,7 +13,7 @@ export class AuthService {
   private user: any;
 
   constructor(private http: Http) { 
-    //this.isDev = true;
+    this.isDev = false;
   }
 
   registerUser(user) {
