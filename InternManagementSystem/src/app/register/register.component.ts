@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.usertypes = ["student","sentor"];
+    this.usertypes = ["Student","Mentor"];
   }
 
   onRegisterSubmit(){
@@ -48,7 +48,6 @@ export class RegisterComponent implements OnInit {
     }
     //Register User
     this.authService.registerUser(user).subscribe(data => {
-      console.log(data);
       if(data.success){
         this.flashMessage.show("You are now registered", {cssClass:'alert-success', timeout: 3000});
         this.router.navigate(['./login']);

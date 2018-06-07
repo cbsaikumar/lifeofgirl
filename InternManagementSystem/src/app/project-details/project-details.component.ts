@@ -38,7 +38,6 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   apply(data){
-    console.log(data);
     // let navigationExtras : NavigationExtras = {queryParams: {"project" : JSON.stringify(this.projectData)}};
 
     // this.router.navigate(['./projectRegistration'], navigationExtras);

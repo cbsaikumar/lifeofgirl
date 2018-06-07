@@ -1,17 +1,16 @@
-
-<h1>Mentor Registration</h1>
-<form #registrationForm="ngForm" (ngSubmit)="register(registrationForm);">
+<h2 class="page-header">Update your profile</h2>
+<form #registrationForm="ngForm" (ngSubmit)="register();">
     <div class="container">
       <div class="row form-group">
             <div class="col-lg-4">
-                <label for="userType">User Type</label>
+                <label for="usertype">User Type</label>
             </div> 
             <div class="col-lg-4">
                 <input type="text" 
                 class="form-control" 
-                name="userType"
-                id="userType"
-                [(ngModel)]="userType"
+                name="usertype"
+                id="usertype"
+                [(ngModel)]="usertype"
                 disabled>
             </div>
       </div>
@@ -41,7 +40,8 @@
             id="email"
             [(ngModel)]="email"
             required
-            minlength="3">
+            minlength="3"
+            disabled>
         </div>
       </div>
       <div class="row form-group">
@@ -73,7 +73,7 @@
         </div>
         <div class="row form-group">
             <div class="col-lg-4">
-                <label for="Affiliation">Affiliation</label>
+                <label for="affiliation">Affiliation</label>
             </div>
             <div class="col-lg-4">
                   <input type="text" 
@@ -86,62 +86,62 @@
           </div>
           <div class="row form-group">
               <div class="col-lg-4">
-                  <label for="positionOfResponsibility">Position of Responsibility</label>
+                  <label for="position_of_responsibility">Position of Responsibility</label>
               </div>
               <div class="col-lg-4">
                     <input type="text" 
                     class="form-control" 
-                    name="positionOfResponsibility"
-                    id="positionOfResponsibility"
-                    [(ngModel)]="positionOfResponsibility"
+                    name="position_of_responsibility"
+                    id="position_of_responsibility"
+                    [(ngModel)]="position_of_responsibility"
                     required>
               </div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-4">
-                    <label for="associationWithLog">Are you associated with Life-of-Girl project?</label>
+                    <label for="association_with_log">Are you associated with Life-of-Girl project?</label>
                 </div>
                 <div class="col-lg-4">
                       <input type="radio" 
                       class="form-control" 
-                      name="associationWithLog"
-                      id="associationWithLog"
+                      name="association_with_log"
+                      id="association_with_log"
                       value="yes"
-                      [(ngModel)]="associationWithLog">Yes
+                      [(ngModel)]="association_with_log">Yes
                       <input type="radio" 
                       class="form-control" 
-                      name="associationWithLog"
-                      id="associationWithLog"
+                      name="association_with_log"
+                      id="association_with_log"
                       value="no"
-                      [(ngModel)]="associationWithLog">No
+                      [(ngModel)]="association_with_log">No
                 </div>
               </div>
-              <div class="row form-group" *ngIf="associationWithLog === 'yes'">
+              <div class="row form-group" *ngIf="association_with_log === 'yes'">
                 <div class="col-lg-4">
-                    <label for="logObjectiveDesc">Please Enter your LOG ID</label>
+                    <label for="log_id">Please Enter your LOG ID</label>
                 </div>
                 <div class="col-lg-4">
                       <input type="text"
                       class="form-control" 
-                      name="logId"
-                      id="logId"
+                      name="log_id"
+                      id="log_id"
                       required
-                      [(ngModel)]="logId">
+                      [(ngModel)]="log_id">
                 </div>
               </div>   
-              <div class="row form-group" *ngIf="associationWithLog === 'no'">
+              <div class="row form-group" *ngIf="association_with_log === 'no'">
                   <div class="col-lg-4">
-                      <label for="logObjectiveDesc">How do you like to extend your support to our Life-of-Girl (LoG) objectives? (in 100 words)</label>
+                      <label for="log_objective_desc">How do you like to extend your support to our Life-of-Girl (LoG) objectives? (in 100 words)</label>
                   </div>
                   <div class="col-lg-4">
                         <textarea 
                         rows="4" cols="50"
                         class="form-control" 
-                        name="logObjectiveDesc"
-                        id="logObjectiveDesc"
+                        name="log_objective_desc"
+                        id="log_objective_desc"
                         required
                         maxlength="500"
-                        [(ngModel)]="logObjectiveDesc"></textarea>
+                        [(ngModel)]="log_objective_desc"></textarea>
                   </div>
                 </div>      
             </div>    

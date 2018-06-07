@@ -1,18 +1,17 @@
-
-<h1>Student Registration</h1>
+<h2 class="page-header">Update your profile</h2>
 <div>
-<form #registrationForm="ngForm" (ngSubmit)="register(registrationForm);showForm=false;">
+<form #registrationForm="ngForm" (ngSubmit)="register();showForm=false;">
     <div class="container">
         <div class="row form-group">
             <div class="col-lg-4">
-                <label for="userType">User Type</label>
+                <label for="usertype">User Type</label>
             </div> 
             <div class="col-lg-4">
                 <input type="text" 
                 class="form-control" 
-                name="userType"
-                id="userType"
-                [(ngModel)]="userType"
+                name="usertype"
+                id="usertype"
+                [(ngModel)]="usertype"
                 disabled>
             </div>
         </div>
@@ -41,8 +40,7 @@
             name="photo"
             id="photo"
             (change)="readUrl($event)"
-            [(ngModel)]="photo"
-            required>
+            [(ngModel)]="photo">
         </div>
       </div>
 
@@ -62,7 +60,8 @@
             id="email"
             [(ngModel)]="email"
             required
-            [pattern]="emailPattern">
+            [pattern]="emailPattern"
+            disabled>
         </div>
       </div>
       <div class="row form-group">
@@ -133,14 +132,14 @@
             </div>
             <div class="row form-group">
                 <div class="col-lg-4">
-                    <label for="yearOfStudy">Year Of Study</label>
+                    <label for="year_of_study">Year Of Study</label>
                 </div>
                 <div class="col-lg-4">
                       <input type="text" 
                       class="form-control" 
-                      name="yearOfStudy"
-                      id="yearOfStudy"
-                      [(ngModel)]="yearOfStudy"
+                      name="year_of_study"
+                      id="year_of_study"
+                      [(ngModel)]="year_of_study"
                       required>
                 </div>
               </div>
@@ -161,12 +160,12 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-lg-4">
-                        <label for="dreamJob">Dream Job</label>
+                        <label for="dream_job">Dream Job</label>
                     </div>
                     <div class="col-lg-4">
-                        <select name="dreamJob" 
-                        [(ngModel)]="dreamJob" 
-                        id="dreamJob" 
+                        <select name="dream_job" 
+                        [(ngModel)]="dream_job" 
+                        id="dream_job" 
                         required
                         class="form-control">
                           <option *ngFor="let job of dreamJobs" [ngValue]="job">{{ job }}</option>

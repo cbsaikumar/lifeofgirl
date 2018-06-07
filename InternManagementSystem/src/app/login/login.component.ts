@@ -31,14 +31,11 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginForm):void{
-    console.log("loginForm", loginForm.value);
     if(loginForm.value.userType === "student"){
-        console.log("student");
         sessionStorage.setItem('currentUser', 'student');
         this.router.navigate(['./studentRegistration']);
       }
     else if(loginForm.value.userType === "mentor"){
-      console.log("mentor");
       sessionStorage.setItem('currentUser', 'mentor');
       this.router.navigate(['./mentorRegistration']);
     }
@@ -47,10 +44,8 @@ export class LoginComponent implements OnInit {
       username: loginForm.value.username,
       password: loginForm.value.password
     }
-    console.log("userrr", user);
 
     this.authService.authenticateUser(user).subscribe(data=>{
-      console.log(data);
       if(data.success){
         this.authService.storeUserData(data.token, data.user);
         this.flashMessage.show("You are now logged in", {cssClass:'alert-success', timeout: 5000});

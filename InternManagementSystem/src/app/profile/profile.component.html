@@ -1,7 +1,8 @@
 <div *ngIf="user">
-  <h2 class="page-header">{{user.username}}</h2>
-  <ul class="list-group">
-    <li class="list-group-item">Username: {{user.username}}</li>
-    <li class="list-group-item">User Type: {{user.usertype}}</li>
-  </ul>
+  <div *ngIf="user.usertype==='mentor'">
+    <mentor-registration></mentor-registration>
+  </div>
+  <div *ngIf="user.usertype==='student'">
+    <student-registration></student-registration>
+  </div>
 </div>

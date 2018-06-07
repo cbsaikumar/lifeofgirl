@@ -11,7 +11,7 @@
   <div class="form-group">
       <label for="usertype">User Type</label>
       <select type="usertype" [(ngModel)]="usertype" name="usertype" class="form-control">
-        <option *ngFor="let usertype of usertypes" [value]='usertype'>{{usertype}}</option>
+        <option *ngFor="let usertype of usertypes" [value]='usertype.toLowerCase()'>{{usertype}}</option>
       </select>
     </div>
   <input type="submit" class="btn btn-primary" value="Submit">
