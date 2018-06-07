@@ -27,7 +27,7 @@ const users = require('./routes/users')
 
 //Port number
 const port = process.env.PORT || 8080;
-//port = 5000;
+//const port = 5000;
 
 //Body parser Middleware
 app.use(bodyParser.json());
