@@ -1305,9 +1305,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
-        this.registerUrl = 'http://localhost:5000/users/register';
-        this.authenticateUrl = 'http://localhost:5000/users/authenticate';
-        this.profileUrl = 'http://localhost:5000/users/profile';
+        this.registerUrl = 'users/register';
+        this.authenticateUrl = 'users/authenticate';
+        this.profileUrl = 'users/profile';
         //this.isDev = true;
     }
     AuthService.prototype.registerUser = function (user) {
