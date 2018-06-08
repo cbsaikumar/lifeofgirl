@@ -1,0 +1,12 @@
+.custom-table{
+    width: 80%;
+    text-align: left;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+input[type="radio"]{
+    margin-left: 20px;
+    margin-right: 20px;
+}

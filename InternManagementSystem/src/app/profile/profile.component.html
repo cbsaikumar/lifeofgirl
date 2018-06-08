@@ -1,0 +1,8 @@
+<div *ngIf="user">
+  <div *ngIf="user.usertype==='mentor'">
+    <mentor-registration></mentor-registration>
+  </div>
+  <div *ngIf="user.usertype==='student'">
+    <student-registration></student-registration>
+  </div>
+</div>

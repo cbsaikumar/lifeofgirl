@@ -1,0 +1,189 @@
+<h2 class="page-header">Update your profile</h2>
+<div>
+<form #registrationForm="ngForm" (ngSubmit)="register();showForm=false;">
+    <div class="container">
+        <div class="row form-group">
+            <div class="col-lg-4">
+                <label for="usertype">User Type</label>
+            </div> 
+            <div class="col-lg-4">
+                <input type="text" 
+                class="form-control" 
+                name="usertype"
+                id="usertype"
+                [(ngModel)]="usertype"
+                disabled>
+            </div>
+        </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+          <label for="name">Name</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="text" 
+            class="form-control" 
+            name="name"
+            id="name"
+            [(ngModel)]="name"
+            required
+            minlength="3">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+          <label for="photo">Photo</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="file" 
+            accept="image/*"
+            class="form-control photo-input" 
+            name="photo"
+            id="photo"
+            (change)="readUrl($event)"
+            [(ngModel)]="photo">
+        </div>
+      </div>
+
+      <div class="row form-group" *ngIf="photoUrl">
+        <div class="col-lg-4">
+            <img class="photo-preview" [src]="photoUrl">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="email" 
+            class="form-control" 
+            name="email"
+            id="email"
+            [(ngModel)]="email"
+            required
+            [pattern]="emailPattern"
+            disabled>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+            <label for="dob">Date of Birth</label>
+        </div>
+        <div class="col-lg-4">
+              <input type="date" 
+              class="form-control" 
+              name="dob"
+              id="dob"
+              [(ngModel)]="dob"
+              required>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-lg-4">
+            <label for="aadhaar">Aadhaar</label>
+        </div>
+        <div class="col-lg-4">
+              <input type="number" 
+              class="form-control" 
+              name="aadhaar"
+              id="aadhaar"
+              [(ngModel)]="aadhaar"
+              required>
+        </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-lg-4">
+              <label for="mobile">Mobile</label>
+          </div>
+          <div class="col-lg-4">
+                <input type="tel" 
+                
+                class="form-control" 
+                name="mobile"
+                id="mobile"
+                [(ngModel)]="mobile"
+                required>
+          </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-4">
+                <label for="college">College/Instistute</label>
+            </div>
+            <div class="col-lg-4">
+                  <input type="text" 
+                  class="form-control" 
+                  name="college"
+                  id="college"
+                  [(ngModel)]="college"
+                  required>
+            </div>
+          </div>
+          <div class="row form-group">
+              <div class="col-lg-4">
+                  <label for="specialization">Specialization</label>
+              </div>
+              <div class="col-lg-4">
+                    <input type="text" 
+                    class="form-control" 
+                    name="specialization"
+                    id="specialization"
+                    [(ngModel)]="specialization"
+                    required>
+              </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-4">
+                    <label for="year_of_study">Year Of Study</label>
+                </div>
+                <div class="col-lg-4">
+                      <input type="text" 
+                      class="form-control" 
+                      name="year_of_study"
+                      id="year_of_study"
+                      [(ngModel)]="year_of_study"
+                      required>
+                </div>
+              </div>
+              <div class="row form-group">
+                  <div class="col-lg-4">
+                      <label for="cgpa">CGPA</label>
+                  </div>
+                  <div class="col-lg-4">
+                        <input type="number" 
+                    
+                        class="form-control" 
+                        name="cgpa"
+                        id="cgpa"
+                        required
+                        ng-pattern="cgpaRegex"
+                        [(ngModel)]="cgpa">
+                  </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-lg-4">
+                        <label for="dream_job">Dream Job</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <select name="dream_job" 
+                        [(ngModel)]="dream_job" 
+                        id="dream_job" 
+                        required
+                        class="form-control">
+                          <option *ngFor="let job of dreamJobs" [ngValue]="job">{{ job }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!-- <span *ngIf="dreamJob.value==='Others'">
+                      <input type="text" 
+                      class="form-control" 
+                      name="dreamJob"
+                      id="dreamJob"
+                      [(ngModel)]="dreamJob"
+                      required>
+                  </span> -->
+                  
+                  
+    </div>    
+
+    <button class="btn btn-primary" [disabled]="!registrationForm.valid">Register</button>
+
+  </form>
