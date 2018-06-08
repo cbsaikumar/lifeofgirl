@@ -17,7 +17,7 @@ export class AuthService {
   private user: any;
 
   constructor(private http: Http) { 
-    this.isDev = false;
+    //this.isDev = false;
   }
 
   registerUser(user) {

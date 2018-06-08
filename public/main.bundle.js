@@ -1333,7 +1333,7 @@ var AuthService = /** @class */ (function () {
         this.registerUrl = 'users/register';
         this.authenticateUrl = 'users/authenticate';
         this.profileUrl = 'users/profile';
-        this.isDev = false;
+        //this.isDev = false;
     }
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
